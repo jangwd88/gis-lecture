@@ -6,6 +6,7 @@
     "gis-lecture": "www.js"
   },
   "dependencies": {
+    "body-parser": "^1.19.2",
     "ejs": "^3.1.6",
     "express": "^4.17.3"
   },
@@ -13,7 +14,10 @@
     "start": "nodemon ./bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["gis", "node"],
+  "keywords": [
+    "gis",
+    "node"
+  ],
   "author": "wonder chang",
   "license": "MIT",
   "description": "gis nodejs test",
@@ -22,5 +26,4 @@
     "type": "git",
     "url": ""
   }
-
 }
