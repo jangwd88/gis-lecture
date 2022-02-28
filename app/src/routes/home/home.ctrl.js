@@ -19,20 +19,19 @@ const process = {
     login: (req, res) => {
         const id = req.body.id;
         const passwd = req.body.passwd;
+        const response = {};
 
         if(users.id.includes(id)){
             const idx = users.id.indexOf(id);
             if(users.passwd[idx] === passwd){
-                return res.json({
-                    success: true,
-                });
+                response.success = true;
+                return res.json(response);
             }
         }
 
-        return res.json({
-            success: false,
-            msg: "로그인 실패하였습니다.",
-        });
+        response.success = false;
+        response.msg = "로그인 실패하였습니다.";
+        return res.json(response);
     },
 };
 
