@@ -1,5 +1,6 @@
 "use strict"
 
+const UserStorage = require("../../models/UserStorage");
 
 const output = {
     home: (req, res) => {
@@ -10,15 +11,13 @@ const output = {
     },
 };
 
-const users = {
-    id: ["wonder", "chang", "jangwd88"],
-    passwd: ["1234", "12345", "123456", ],
-};
-
 const process = {
     login: (req, res) => {
         const id = req.body.id;
         const passwd = req.body.passwd;
+       
+        const users = UserStorage.getUsers("id", "passwd");
+
         const response = {};
 
         if(users.id.includes(id)){
